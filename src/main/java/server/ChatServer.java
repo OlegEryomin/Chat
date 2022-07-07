@@ -33,6 +33,14 @@ public class ChatServer {
         }
     }
 
+    public void broadcastPersonal(String message, String nick) {
+        for (ClientHandler client : clients) {
+            if (nick.equals(client.getNick())){
+                client.sendMessage(message);
+            }
+        }
+    }
+
     public void subscribe(ClientHandler client) {
         clients.add(client);
     }

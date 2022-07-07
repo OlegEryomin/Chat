@@ -107,6 +107,10 @@ public class ClientHandler {
                 final String message = in.readUTF();
                 if ("/end".equals(message)) {
                     break;
+                } else if (message.startsWith("/w")) {
+                   final String[] split = message.split("\\p{Blank}+");
+                   final String addressee = split[1];
+                   server.broadcastPersonal("[Личное сообщение] "+ nick + ": " + message, addressee);
                 }
                 server.broadcast(nick + ": " + message);
             } catch (IOException e) {
