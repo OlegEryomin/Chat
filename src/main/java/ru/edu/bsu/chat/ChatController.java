@@ -52,8 +52,8 @@ public class ChatController {
     @FXML
     private void onSendMessage() {
         client.sendMessage(sendText.getText());
-//        messages.add(sendText.getText());
-//        textChat.setItems(messages);
+        messages.add(sendText.getText());
+        textChat.setItems(messages);
         sendText.clear();
 
     }
