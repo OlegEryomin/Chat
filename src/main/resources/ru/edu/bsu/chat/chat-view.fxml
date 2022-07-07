@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -13,9 +14,10 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                     <children>
-                        <ListView  fx:id="textChat" layoutX="9.0" layoutY="7.0" prefHeight="271.0" prefWidth="417.0" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                        <TextField fx:id="sendText" layoutX="2.0" layoutY="272.0" prefHeight="25.0" prefWidth="339.0" onKeyPressed="#buttonPressed" promptText="Написать сообщение..." />
+                        <TextArea fx:id="textChat" layoutX="9.0" layoutY="7.0" prefHeight="271.0" prefWidth="417.0" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <TextField fx:id="sendText" layoutX="2.0" layoutY="272.0" onKeyPressed="#buttonPressed" prefHeight="25.0" prefWidth="339.0" promptText="Написать сообщение..." />
                         <Button layoutX="341.0" layoutY="272.0" mnemonicParsing="false" onAction="#onSendMessage" text="Отправить" />
+
                     </children>
                 </AnchorPane>
             </items>

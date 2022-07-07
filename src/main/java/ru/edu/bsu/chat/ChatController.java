@@ -7,19 +7,15 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 public class ChatController {
 
     @FXML
-    private ListView textChat;
+    private TextArea textChat;
 
     @FXML
     private TextField sendText;
-
-    ObservableList<String> messages = FXCollections.observableArrayList();
 
     private final ChatClient client;
 
@@ -52,8 +48,6 @@ public class ChatController {
     @FXML
     private void onSendMessage() {
         client.sendMessage(sendText.getText());
-        messages.add(sendText.getText());
-        textChat.setItems(messages);
         sendText.clear();
 
     }
@@ -68,7 +62,6 @@ public class ChatController {
     }
 
     public void addMessage(String message) {
-        messages.add(message);
-        textChat.setItems(messages);
+        textChat.appendText(message + "\n");
     }
 }
